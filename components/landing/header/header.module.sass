@@ -1,0 +1,67 @@
+@import '../../../styles/variable'
+
+.header_container
+  position: $position_absolute
+  width: $full_width
+  z-index: 2
+  padding: 0 50px
+
+.header
+  height: 132px
+
+.header_contain
+  width: $full_width
+  height: 132px
+  display: flex
+
+.font_white
+  color: $white_color
+
+.menu
+  color: #e0e0e0
+  align-items: center
+  font-size: 22px
+  font-family: 'Lato'
+
+.menu_icon
+  height: 26px
+  font-size: 28px
+
+.logo
+  color: #fff
+  font-size: 28px
+  display: flex
+  align-items: center
+  justify-content: center
+
+.search_container
+  align-items: center
+
+.search
+  width: 80%
+  height: 55px
+  border-radius: 40px
+  &> input
+    &::placeholder
+      font-size: 18px !important
+
+.search_tab
+  width: 90%
+  height: 55px
+  border-radius: 40px
+  &> input
+    &::placeholder
+      font-size: 18px !important
+      @extend %font_family_roboto
+
+.search_logo
+  color: #3e9641
+  font-size: 22px
+  font-weight: 600
+
+.avatar_img
+  font-size: 28px
+
+.search_inner_container
+  display: flex
+  justify-content: flex-end

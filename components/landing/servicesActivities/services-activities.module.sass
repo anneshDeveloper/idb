@@ -1,0 +1,134 @@
+@import '../../../styles/variable'
+  
+.service_container
+  margin: $zero $auto
+  @extend %container_width
+
+.service_left_container
+  text-align: $center
+
+.services_tilte
+  font-size: 35px
+  width: 178px
+  height: 91px
+  margin-right: $auto
+  margin-left: $auto
+  @extend %text_align_left
+  @extend %font_family_lato
+
+.services_image
+  background-color: $white_color
+  height: 300px
+  width: 410
+
+.card_avatar_container
+  @extend %display_flex
+  height: $two_hundred_two_px
+  justify-content: $center
+  align-items: $center
+
+.card_text_container
+  @extend %display_flex
+  flex-direction: column
+  height: $two_hundred_two_px
+  justify-content: $center
+  align-items: $center
+
+.services_card
+  background-color: $white_color_shade2
+  border-radius: 8px
+  width: 358px
+  height: $two_hundred_two_px
+
+.m_br
+  margin-bottom: $six_px
+  margin-right: $six_px
+
+.m_bl
+  margin-bottom: $six_px
+  margin-left: $six_px
+
+.m_tr
+  margin-top: $six_px
+  margin-right: $six_px
+
+.m_tl
+  margin-top: $six_px
+  margin-left: $six_px
+
+.services_card_text
+  width: 131px
+  @extend %font_size_20
+  font-weight: $bold
+  @extend %font_family_lato
+
+.services_know_more
+  color: #40a03b
+  @extend %font_size_18
+  font-weight: $five_hundred
+  @extend %font_family_roboto
+
+.card_avatar
+  width: $one_hundred_thirtysix_px
+  height: $one_hundred_thirtysix_px
+  line-height: $one_hundred_thirtysix_px
+  background-color: #e1efda
+
+.services_btn_container
+  @extend %display_flex
+  @extend %djustify_content_flexend
+  padding-right: 180px
+
+.services_know_more_btn
+  padding: $zero
+  border: $zero
+  background-color: $white_color_shade2
+  &:hover
+    background-color: $white_color_shade2
+
+.service_btn_container
+  @extend %display_flex
+  justify-content: $center
+
+.service_btn_container_tab_view
+  @extend %display_flex
+  @extend %djustify_content_flexend
+  width: $full_width
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .service_container
+    width: 910px
+
+  .services_card
+    width: 280px
+
+  .card_avatar
+    width: $one_hundred_twentyfive_px
+    height: $one_hundred_twentyfive_px
+    line-height: $one_hundred_twentyfive_px
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .service_container
+    width: $full_width
+
+  .services_image
+    margin: $auto
+    width: 408px
+    height: 294px
+
+  .service_card_container
+    justify-content: $center
+
+  .services_card
+    width: 360px
+
+  .card_avatar
+    width: $one_hundred_thirtysix_px
+    height: $one_hundred_thirtysix_px
+    line-height: $one_hundred_thirtysix_px
+
+  .service_btn_container
+    width: $full_width
+
+  .service_btn_container_tab_view
+    width: 732px

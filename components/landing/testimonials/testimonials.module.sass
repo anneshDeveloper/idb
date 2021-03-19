@@ -1,0 +1,39 @@
+@import '../../../styles/variable'
+
+.testimonials_container
+  margin: $zero $auto
+  @extend %container_width
+
+.testimonials_text
+  width: 85%
+
+.testimonials_title
+  font-size: 35px
+  font-weight: $six_hundred
+  @extend %font_family_lato
+
+.testimonials_des
+  color: #525252
+  @extend %font_size_24
+  @extend %font_family_roboto
+
+.testimonials_author
+  @extend %font_size_24
+  text-align: right
+  font-weight: $bold
+  @extend %font_family_lato
+
+.image_container
+  @extend %display_flex
+  background-color: $white_color
+  justify-content: $center
+  align-items: $center
+  height: 387px
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .testimonials_container
+    width: 894px
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .testimonials_container
+    width: 759px
