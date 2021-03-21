@@ -1,0 +1,48 @@
+@import '../../../styles/variable'
+
+.whats_new_card
+  background-color: $white_color
+  width: 332px
+  height: 457px
+  @extend %box_shadow
+
+.whats_new_card_image
+  height: $two_hundred_two_px
+  background-color: $white_color
+
+.whats_new_card_text
+  height: 160px
+  overflow: hidden
+  &> h3
+    @extend %font_size_18
+    font-weight: $five_hundred
+    @extend %font_family_roboto
+  &> p
+    color: #9a9a9a
+    @extend %font_size_14
+    font-weight: $five_hundred
+    @extend %font_family_roboto
+
+.whats_new_card_btn
+  padding: $zero
+  border: $zero
+  &>h6
+    color: $navyblue_color
+    font-weight: $bold
+    @extend %font_family_lato
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .whats_new_card
+    width: 250px
+    height: $auto
+  .whats_new_card_image
+    height: $auto
+    background-color: $white_color
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .whats_new_card
+    width: 245px
+    height: $auto
+  .whats_new_card_image
+    height: $auto
+    background-color: $white_color

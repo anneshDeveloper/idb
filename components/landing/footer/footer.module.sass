@@ -1,0 +1,191 @@
+@import '../../../styles/variable'
+
+.footer
+  position: $position_relative
+
+.second_layer,
+.first_layer
+  width: $full_width
+  position: $position_absolute
+
+.second_layer
+  z-index: $one
+
+.first_layer
+  z-index: 2
+
+.first_layer
+  top: 360px
+
+.contact_us_container
+  @extend %display_flex
+  justify-content: $center
+  background-color: $yellow_color
+  height: 453px
+
+.contact_us_subcontainer
+  width: 40%
+
+.contact_us_subtext_title,
+.contact_us_subtext_des
+  color: $navyblue_color
+  font-weight: $bold
+  @extend %font_family_lato
+
+.contact_us_subtext_title
+  @extend %font_size_18
+
+.contact_us_subtext_des
+  @extend %font_size_14
+
+.contact_us_text
+  color: $navyblue_color
+  font-size: 35px
+  @extend %font_family_lato
+
+.contact_us_para
+  color: $navyblue_color
+  @extend %font_size_18
+  font-weight: $bold
+  @extend %font_family_lato
+
+.navigation_container_bg
+  background-color: #2c2e31
+  height: 437px
+  position: $position_relative
+
+.navigation_container
+  position: $position_absolute
+  width: $full_width
+  height: 220px
+  bottom: 0px
+  justify-content: $center
+
+.navigation_container
+  &> div
+    margin: $auto
+    width: $eight_percen
+
+.rights_reserved
+  @extend %display_flex
+  justify-content: $center
+  align-items: $center
+  background-color: #1b1c1d
+  height: 70px
+
+.rights_reserved
+  &> div
+    color: #FFFFFF88
+    @extend %font_size_16
+    @extend %font_family_roboto
+
+.newsletter_container
+  @extend %display_flex
+  flex-direction: column
+  width: $eight_percen
+  border-radius: 40px
+  background-color: #0d3c47
+  height: 252px
+  margin: $auto
+  justify-content: $center
+  align-items: $center
+
+.newsletter_input_container
+  @extend %display_flex
+  width: 60%
+  &> input
+    width: 70%
+    border-radius: $twelve_px $zero $zero $twelve_px
+    border: $zero
+    padding: 25px
+    &:focus
+      outline: $zero
+    &::placeholder
+      @extend %font_size_18
+      color: #0000002f
+  &> button
+    background-color: $yellow_color
+    width: 30%
+    border: $zero
+    border-radius: $zero $twelve_px $twelve_px $zero
+    @extend %font_size_18
+    font-weight: $bold
+    @extend %font_family_lato
+    &:focus
+      outline: $zero
+      animation-name: btnanimation
+      animation-duration: .25s
+
+.newsletter_input_container
+  &> input,
+  &> button
+    height: $sixty_px
+
+.social_media_icon
+  color: $white_color
+  @extend %font_size_18
+
+.footer_list
+  list-style-type: none
+  color: $white_color
+  &> li
+    @extend %font_size_14
+    margin-bottom: 8px
+    opacity: .7
+    @extend %font_family_roboto
+    cursor: pointer
+
+.footer_list_address
+  @extend %font_size_14
+
+.footer_list_header
+  font-size: 21px $important
+  opacity: $one $important
+  @extend %font_family_lato
+
+.font_size_18
+  @extend %font_size_18
+
+.footer_list_cursor_pointer
+  cursor: pointer $important
+
+.footer_list_cursor_auto
+  cursor: $auto $important
+
+@keyframes btnanimation
+  30%
+    background-color: $yellow_color
+
+  30%
+    background-color: #fad96c
+
+  40%
+    background-color: $yellow_color
+
+.newsletter_title
+  color: $white_color
+  width: 60%
+  @extend %font_family_lato
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .navigation_container
+    &> div
+      width: 90%
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .contact_us_subcontainer
+    width: 55%
+
+  .navigation_container
+    &> div
+      width: $full_width
+
+  .footer_list_header
+    @include font_size_18
+    opacity: $one $important
+
+  .footer_list
+    &> li
+      font-size: 13px
+      margin-bottom: $six_px
+      opacity: .7

@@ -1,0 +1,48 @@
+@import '../../../styles/variable'
+  
+.events_card
+  width: 352px
+  height: 372px
+  background: $white_color
+  @extend %box_shadow
+
+.events_card_image
+  height: 221px
+  background-color: $white_color
+
+.events_card_title
+  @extend %font_family_lato
+  @extend %font_size_18
+
+.events_card_des
+  color: #767676
+  @extend %font_family_roboto
+
+.events_card_date_month
+  font-weight: $six_hundred
+  @extend %font_family_lato
+  @extend %font_size_24
+
+.events_card_date_day
+  color: #41A23B
+  font-weight: $six_hundred
+  @extend %font_family_lato
+  @extend %font_size_24
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .events_card
+    width: 270px
+    height: 324px
+
+  .events_card_image
+    background-color: $white_color
+    height: $auto
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .events_card
+    width: 245px
+    height: 308px
+
+  .events_card_image
+    background-color: $white_color
+    height: $auto

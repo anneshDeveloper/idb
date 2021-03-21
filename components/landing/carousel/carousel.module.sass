@@ -1,0 +1,45 @@
+@import '../../../styles/variable'
+
+.banner_container
+  @extend %banner_height
+
+.image
+  width: $full_width
+  @extend %banner_height
+
+.slide_btn
+  top: 300px $important
+  width: $sixty_px
+  height: $sixty_px
+  border-radius: 50% $important
+  background-color: #5f6e8c80 $important
+
+.text
+  background-color: #00000000 $important
+  bottom: 120px $important
+  width: 400px $important
+  opacity: $one $important
+  @extend %text_align_left
+
+.text_title
+  font-size: 32px
+  color: $white_color
+  font-weight: $six_hundred
+  @extend %font_family_lato
+
+.text_time
+  font-size: 22px
+  color: $white_color
+  @extend %font_family_lato
+
+.text_button
+  width: 211px
+  height: 54px $important
+  background-color: $yellow_color
+  @extend %font_size_18
+  border: $zero
+  font-weight: $six_hundred
+  @extend %font_family_lato
+  &:hover
+    background-color: $yellow_color
+    color: $black_color
