@@ -1,10 +1,12 @@
 import Image from "next/image";
-import { Row, Col, Input, Avatar } from "antd";
+import { Row, Col, Form, Input, Avatar, Button } from "antd";
 import { MenuOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 //css
 import styles from "./header.module.sass";
 
 function Header({ logo }) {
+  const [form] = Form.useForm();
+
   return (
     <header className={styles.header_container}>
       <Row>
@@ -13,11 +15,18 @@ function Header({ logo }) {
           <div className={styles.header}>
             <Row>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <div className={`${styles.header_contain} ${styles.menu}`}>
-                  <MenuOutlined
-                    className={`${styles.font_white} ${styles.menu_icon} pr-4`}
+                <div className={`${styles.header_contain}`}>
+                  <Button
+                    type="text"
+                    icon={
+                      <MenuOutlined
+                        className={`${styles.font_white} ${styles.menu_icon} pr-4`}
+                      />
+                    }
                   />
-                  Menu
+                  <Button type="text" className={`${styles.menu_btn} mt-2`}>
+                    Menu
+                  </Button>
                 </div>
               </Col>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -36,15 +45,33 @@ function Header({ logo }) {
                       md={17}
                       lg={16}
                       xl={17}
-                      className={`${styles.search_inner_container}`}
+                      className={`${styles.search_inner_container} h-100`}
                     >
-                      <Input
-                        placeholder="Search"
-                        suffix={
-                          <SearchOutlined className={styles.search_logo} />
-                        }
-                        className={`${styles.search} pl-4`}
-                      />
+                      <Form
+                        form={form}
+                        className={`w-100 d-flex justify-content-end`}
+                      >
+                        <Form.Item
+                          name="search"
+                          rules={[
+                            {
+                              min: 3,
+                              max: 30,
+                              message:
+                                "Search must be minimum 3 & maximum 30 characters.",
+                            },
+                          ]}
+                          className={`${styles.search_form_item} m-0 w-100`}
+                        >
+                          <Input
+                            placeholder="Search"
+                            suffix={
+                              <SearchOutlined className={styles.search_logo} />
+                            }
+                            className={`${styles.search} pl-4`}
+                          />
+                        </Form.Item>
+                      </Form>
                     </Col>
                     <Col
                       xs={7}
@@ -79,11 +106,18 @@ function Header({ logo }) {
           <div className={styles.header}>
             <Row>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <div className={`${styles.header_contain} ${styles.menu}`}>
-                  <MenuOutlined
-                    className={`${styles.font_white} ${styles.menu_icon} pr-4`}
+                <div className={`${styles.header_contain}`}>
+                  <Button
+                    type="text"
+                    icon={
+                      <MenuOutlined
+                        className={`${styles.font_white} ${styles.menu_icon} pr-4`}
+                      />
+                    }
                   />
-                  Menu
+                  <Button type="text" className={`${styles.menu_btn} mt-2`}>
+                    Menu
+                  </Button>
                 </div>
               </Col>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
@@ -102,15 +136,32 @@ function Header({ logo }) {
                       md={17}
                       lg={18}
                       xl={18}
-                      className={`${styles.search_inner_container} pr-3`}
+                      className={`${styles.search_inner_container} h-100 pr-3`}
                     >
-                      <Input
-                        placeholder="Search"
-                        suffix={
-                          <SearchOutlined className={styles.search_logo} />
-                        }
-                        className={`${styles.search_tab} pl-4`}
-                      />
+                      <Form
+                        form={form}
+                        className={`w-100 d-flex justify-content-end`}
+                      >
+                        <Form.Item
+                          name="search"
+                          rules={[
+                            {
+                              min: 3,
+                              max: 30,
+                              message: "Min 3 & max 30 characters.",
+                            },
+                          ]}
+                          className={`${styles.search_form_item} m-0 w-100`}
+                        >
+                          <Input
+                            placeholder="Search"
+                            suffix={
+                              <SearchOutlined className={styles.search_logo} />
+                            }
+                            className={`${styles.search_tab} pl-4`}
+                          />
+                        </Form.Item>
+                      </Form>
                     </Col>
                     <Col
                       xs={6}

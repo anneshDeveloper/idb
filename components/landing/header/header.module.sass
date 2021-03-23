@@ -13,15 +13,21 @@
   width: $full_width
   height: 132px
   display: flex
+  align-items: center
 
 .font_white
   color: $white_color
 
-.menu
+.menu_btn
   color: #e0e0e0
   align-items: center
   font-size: 22px
   font-family: 'Lato'
+  height: 50px
+  &:hover
+    color: #e0e0e0
+  &:focus
+    color: #e0e0e0
 
 .menu_icon
   height: 26px
@@ -37,8 +43,11 @@
 .search_container
   align-items: center
 
+.search_form_item
+  padding-top: 40px
+
 .search
-  width: 80%
+  // width: 80%
   height: 55px
   border-radius: 40px
   &> input
@@ -46,7 +55,7 @@
       font-size: 18px !important
 
 .search_tab
-  width: 90%
+  // width: 90%
   height: 55px
   border-radius: 40px
   &> input

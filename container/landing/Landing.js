@@ -10,35 +10,35 @@ import Footer from "../../components/landing/footer/Footer";
 // css
 import styles from "./index.module.sass";
 
-export default function Landing({ news }) {
-  console.log(news);
-  const socialMediaIcon ={
-    fb:'/fb.svg',
-    tw:'/tw.svg',
-    li:'/LI.svg',
-    yt:'/YT.svg'
-  }
+export default function Landing({
+  news,
+  bannerData,
+  eventsData,
+  socialMediaIcon,
+  contactUsData,
+}) {
   return (
     <>
-      <ComponentHead logo={'/favicon.ico'} />
+      <ComponentHead logo={"/favicon.ico"} />
       <div className={`${styles.carousel_header}`}>
         <Header
           logo={
             "/IsDB Group _ EN _ logo _ primary _ single colour _ white_header.png"
           }
         />
-        <BannerBG />
+        <BannerBG bannerData={bannerData}/>
       </div>
       <ServicesActivities />
       <WhatsNew newsData={news} />
       <Testimonials />
       <UpcomingEvents
-        newsData={news}
-        logo={
-          "/IsDB Group _ EN _ logo _ primary _ single colour _ white_header.png"
-        }
+        eventsData={eventsData}
       />
-      <Footer logo={"/StaffSocialClub-Logo_footer.png"} socialMediaIcon={socialMediaIcon} />
+      <Footer
+        logo={"/StaffSocialClub-Logo_footer.png"}
+        socialMediaIcon={socialMediaIcon}
+        contactUsData={contactUsData}
+      />
     </>
   );
 }

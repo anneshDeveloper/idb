@@ -5,14 +5,14 @@ import CommonSectionCardView from "../commonSectionCardView/CommonSectionCardVie
 //css
 import styles from "./upcoming-events.module.sass";
 
-function Card({ data, view, logo }) {
+function Card({ data, view }) {
   const base_url = process.env.BASE_URL;
   return (
     <div className={`${styles.events_card} mb-4`}>
       <div className={`${styles.events_card_image}`}>
         <Image
-          src={base_url + data.News_image[0].formats.thumbnail.url}
-          alt="card-img"
+          src={base_url + data.EventImage[0].formats.thumbnail.url}
+          alt={data.EventImage[0].formats.thumbnail.hash}
           width="352"
           height="221"
         />
@@ -24,30 +24,30 @@ function Card({ data, view, logo }) {
               className={`d-flex justify-content-center align-items-center h-100 flex-column`}
             >
               <p className={`${styles.events_card_date_month} m-0`}>
-                {data.Created_Date.split(",")[0]
+                {data.EventCreatedDate.split(",")[0]
                   .split(" ")[0]
                   .toUpperCase()
                   .substring(0, 3)}
               </p>
               <p className={`${styles.events_card_date_day} m-0`}>
-                {data.Created_Date.split(",")[0].split(" ")[1]}
+                {data.EventCreatedDate.split(",")[0].split(" ")[1]}
               </p>
             </div>
           </Col>
           <Col xs={18} sm={18} md={18} lg={18} xl={18}>
             <h6 className={`${styles.events_card_title} m-0 mb-2`}>
               {view === "tablet"
-                ? data.News_title.length > 26
-                  ? `${data.News_title.substring(0, 26)}...`
-                  : data.News_title
-                : data.News_title.length > 32
-                ? `${data.News_title.substring(0, 32)}...`
-                : data.News_title}
+                ? data.EventTitle.length > 26
+                  ? `${data.EventTitle.substring(0, 26)}...`
+                  : data.EventTitle
+                : data.EventTitle.length > 32
+                ? `${data.EventTitle.substring(0, 32)}...`
+                : data.EventTitle}
             </h6>
             <p className={`${styles.events_card_des} m-0`}>
-              {data.News_description.length > 60
-                ? `${data.News_description.substring(0, 60)}...`
-                : data.News_description}
+              {data.EventDescription.length > 60
+                ? `${data.EventDescription.substring(0, 60)}...`
+                : data.EventDescription}
             </p>
           </Col>
         </Row>
@@ -56,8 +56,8 @@ function Card({ data, view, logo }) {
   );
 }
 
-export default function UpcomingEvents({ newsData, logo }) {
-  let cardsData = newsData.slice(0, 6);
+export default function UpcomingEvents({ eventsData }) {
+  let cardsData = eventsData.slice(0, 6);
   return (
     <Row>
       <Col xs={0} sm={0} md={0} lg={24} xl={24}>
@@ -66,7 +66,6 @@ export default function UpcomingEvents({ newsData, logo }) {
           title={`Upcoming Events`}
           view={"desktop"}
           cardsData={cardsData}
-          logo={logo}
         />
       </Col>
       <Col xs={0} sm={0} md={24} lg={0} xl={0}>
@@ -75,7 +74,6 @@ export default function UpcomingEvents({ newsData, logo }) {
           title={`Upcoming Events`}
           view={"tablet"}
           cardsData={cardsData}
-          logo={logo}
         />
       </Col>
     </Row>

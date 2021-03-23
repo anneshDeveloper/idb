@@ -44,8 +44,13 @@ $beakpoint_tablet: 1000px
 %font_size_16
     font-size: 16px $important
 
-%font_size_20
+@mixin font_size_20
     font-size: 20px $important
+
+%font_size_20
+    @include font_size_20
+// %font_size_20
+//     font-size: 20px $important
 
 %font_size_24
     font-size: 24px $important

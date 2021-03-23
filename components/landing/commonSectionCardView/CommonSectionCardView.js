@@ -10,7 +10,6 @@ export default function CommonSectionCardView({
   title,
   view,
   cardsData,
-  logo,
 }) {
   const Card = card;
   return (
@@ -97,7 +96,7 @@ export default function CommonSectionCardView({
                       : "px-4"
                   }`}
                 >
-                  <Card data={cardData} view={view ? view : ""} logo={logo} />
+                  <Card data={cardData} view={view ? view : ""} />
                 </Col>
               );
             }

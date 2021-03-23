@@ -11,15 +11,15 @@ function Card({ data }) {
     <div className={`${styles.whats_new_card} p-4`}>
       <div className={`${styles.whats_new_card_image} mb-3`}>
         <Image
-          src={base_url + data.News_image[0].formats.thumbnail.url}
+          src={base_url + data.NewsImage[0].formats.thumbnail.url}
           alt="card-img"
           width="284"
           height="202"
         />
       </div>
       <div className={`${styles.whats_new_card_text}`}>
-        <h3>{data.News_title}</h3>
-        <p>{data.News_description}</p>
+        <h3>{data.NewsTitle}</h3>
+        <p>{data.NewsDescription}</p>
       </div>
       <Button className={`${styles.whats_new_card_btn}`}>
         <h6 className={`m-0`}>READ MORE</h6>

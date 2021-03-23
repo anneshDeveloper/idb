@@ -1,5 +1,5 @@
 @import '../../../styles/variable'
-  
+
 .events_card
   width: 352px
   height: 372px
@@ -38,6 +38,9 @@
     background-color: $white_color
     height: $auto
 
+  .events_card_date_month
+    @include font_size_20
+
 @media only screen and (max-width: $beakpoint_tablet)
   .events_card
     width: 245px
@@ -46,3 +49,6 @@
   .events_card_image
     background-color: $white_color
     height: $auto
+
+  .events_card_date_month
+    @include font_size_18
