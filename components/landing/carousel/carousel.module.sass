@@ -8,29 +8,36 @@
   @extend %banner_height
 
 .slide_btn
-  top: 300px $important
+  top: 250px $important
   width: $sixty_px
   height: $sixty_px
+  opacity: $one $important
   border-radius: 50% $important
-  background-color: #5f6e8c80 $important
+  background-color: transparent $important
+  border: 3px $solid $white_color $important
 
 .text
   background-color: #00000000 $important
-  bottom: 120px $important
-  width: 400px $important
+  bottom: 160px $important
+  width: 600px $important
   opacity: $one $important
   @extend %text_align_left
 
 .text_title
   font-size: 32px
   color: $white_color
-  font-weight: $six_hundred
-  @extend %font_family_lato
+  font-weight: $five_hundred
+  @extend %font_family_oswald
+
+.text_des
+  color: #FFFFFF9A
+  @extend %font_size_18
+  @extend %font_family_roboto
 
 .text_time
-  font-size: 22px
-  color: $white_color
-  @extend %font_family_lato
+  color: #E0E0E0
+  @extend %font_size_16
+  @extend %font_family_roboto
 
 .text_button
   width: 211px
@@ -39,7 +46,8 @@
   @extend %font_size_18
   border: $zero
   font-weight: $six_hundred
-  @extend %font_family_lato
-  &:hover
+  @extend %font_family_roboto
+  &:hover,
+  &:focus
     background-color: $yellow_color
     color: $black_color

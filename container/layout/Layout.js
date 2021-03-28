@@ -10,9 +10,8 @@ export default function Layout({ children, socialMediaIcon, contactUsData }) {
     <>
       <Head logo={"/favicon.ico"} />
       <Header
-        logo={
-          "/IsDB Group _ EN _ logo _ primary _ single colour _ white_header.png"
-        }
+        menuIcon={"/Title Icon set1.svg"}
+        logo={"/Title_Logo.svg"}
         setDrawerVisbility={setVisbility}
       />
       {children}

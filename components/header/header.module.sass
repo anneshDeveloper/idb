@@ -1,76 +1,73 @@
 @import '../../styles/variable'
 
 .header_container
-  position: $position_absolute
   width: $full_width
+  background-color: $white_color
   z-index: 2
   padding: 0 50px
 
 .header
-  height: 132px
+  height: 140px
 
 .header_contain
   width: $full_width
-  height: 132px
+  height: 140px
   display: flex
   align-items: center
-
-.font_white
-  color: $white_color
 
 .menu_btn
-  color: #e0e0e0
   align-items: center
   font-size: 22px
-  font-family: 'Lato'
+  @extend %font_family_lato
   height: 50px
   &:hover
-    color: #e0e0e0
+    color: $black_color
   &:focus
-    color: #e0e0e0
-
-.menu_icon
-  height: 26px
-  font-size: 28px
+    color: $black_color
 
 .logo
-  color: #fff
-  font-size: 28px
-  display: flex
-  align-items: center
-  justify-content: center
+  display: $flex
+  justify-content: $center
 
-.search_container
-  align-items: center
+.search_btn
+  height: 54px
 
-.search_form_item
-  padding-top: 40px
+.sign_up_btn,
+.sign_in_btn
+  width: 145px
+  height: 54px
+  @extend %font_family_lato
+  @extend %font_size_18
 
-.search
-  // width: 80%
-  height: 55px
-  border-radius: 40px
-  &> input
-    &::placeholder
-      font-size: 18px !important
+.sign_up_btn
+  color: #233671 $important
 
-.search_tab
-  // width: 90%
-  height: 55px
-  border-radius: 40px
-  &> input
-    &::placeholder
-      font-size: 18px !important
-      @extend %font_family_roboto
+%sign_in_btn_bg_font
+  background: transparent linear-gradient(110deg, #43A937 0%, #233872 100%) 0% 0% no-repeat padding-box
+  color: $white_color
 
-.search_logo
-  color: #3e9641
+.sign_in_btn
+  box-shadow: 0px 3px 6px #337D582E
+  border-radius: 6px
+  @extend %sign_in_btn_bg_font
+  &:hover,
+  &:focus
+    @extend %sign_in_btn_bg_font
+
+.search_icon
   font-size: 22px
   font-weight: 600
 
 .avatar_img
   font-size: 28px
 
-.search_inner_container
-  display: flex
-  justify-content: flex-end
+@media only screen and (max-width: $beakpoint_laptop_sm)
+  .sign_up_btn,
+  .sign_in_btn
+    width: 120px
+
+@media only screen and (max-width: $beakpoint_tablet)
+  .sign_up_btn,
+  .sign_in_btn
+    width: 80px
+    padding: $zero

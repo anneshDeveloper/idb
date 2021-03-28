@@ -6,9 +6,10 @@ $app_btn_border: #051f1a
 $grayishwhite_color: #F4F4F4
 $yellow_color: #fdcf3c
 $important: !important
-$banner_height: 648px
+$banner_height: 560px
 $position_absolute: absolute
 $position_relative: relative
+$flex: flex
 $zero: 0
 $one: 1
 $five_hundred: 500
@@ -37,6 +38,9 @@ $beakpoint_tablet: 1000px
 
 %font_family_roboto
     font-family: 'Roboto' $important
+
+%font_family_oswald
+    font-family: 'Oswald' $important
 
 %font_size_14
     font-size: 14px
@@ -71,7 +75,7 @@ $beakpoint_tablet: 1000px
     border: $three_px $solid $app_btn_border $important
 
 %banner_height
-    height: 648px
+    height: $banner_height
 
 %display_flex
     display: flex $important

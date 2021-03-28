@@ -26,6 +26,11 @@ export default function ComponentHead({ logo }) {
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;900&display=swap"
         rel="stylesheet"
       />
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+        rel="stylesheet"
+      />
     </Head>
   );
 }

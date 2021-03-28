@@ -8,8 +8,6 @@ import UpcomingEvents from "../../components/landing/upcomingEvents/UpcomingEven
 import Testimonials from "../../components/landing/testimonials/Testimonials";
 import Footer from "../../components/footer/Footer";
 import Layout from "../../container/layout/Layout";
-// css
-import styles from "./index.module.sass";
 
 export default function Landing({
   news,
@@ -21,15 +19,7 @@ export default function Landing({
   return (
     <>
       <Layout socialMediaIcon={socialMediaIcon} contactUsData={contactUsData}>
-        {/* <ComponentHead logo={"/favicon.ico"} /> */}
-        <div className={`${styles.carousel_header}`}>
-          {/* <Header
-          logo={
-            "/IsDB Group _ EN _ logo _ primary _ single colour _ white_header.png"
-          }
-        /> */}
-          <BannerBG bannerData={bannerData} />
-        </div>
+        <BannerBG bannerData={bannerData} />
         <ServicesActivities />
         <WhatsNew newsData={news} />
         <Testimonials />

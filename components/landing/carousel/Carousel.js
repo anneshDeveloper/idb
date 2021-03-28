@@ -1,5 +1,5 @@
 import Image from "next/image";
-import moment from 'moment';
+import moment from "moment";
 import { Carousel } from "react-responsive-carousel";
 import { Button } from "antd";
 //css
@@ -47,10 +47,16 @@ export default function BannerBG({ bannerData }) {
               <h1 className={`${styles.text_title} mb-4`}>
                 {banner.BannerTitle}
               </h1>
+              <p className={`${styles.text_des} mb-4`}>
+                {banner.BannerDescription &&
+                banner.BannerDescription.length > 100
+                  ? `${banner.BannerDescription.substring(0, 100)}...`
+                  : banner.BannerDescription}
+              </p>
               <p className={`${styles.text_time}`}>
-                {`${banner.CreatedDate.split(",")[0]} - ${
-                  moment(banner.BannerExpiration).format("MMMM DD")
-                }`}
+                {`${banner.CreatedDate.split(",")[0]} - ${moment(
+                  banner.BannerExpiration
+                ).format("MMMM DD")}`}
               </p>
               <Button
                 shape="round"
