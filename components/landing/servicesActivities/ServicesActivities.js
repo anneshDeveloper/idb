@@ -2,30 +2,13 @@ import Image from "next/image";
 import { Row, Col, Button, Avatar } from "antd";
 // component
 import CommonSectionCardView from "../commonSectionCardView/CommonSectionCardView";
+import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 //css
 import styles from "./services-activities.module.sass";
 
 function Card({ data }) {
-  let card_spacing = "";
-  switch (data.spacing) {
-    case "m_br":
-      card_spacing = styles.m_br;
-      break;
-    case "m_bl":
-      card_spacing = styles.m_bl;
-      break;
-    case "m_tr":
-      card_spacing = styles.m_tr;
-      break;
-    case "m_tl":
-      card_spacing = styles.m_tl;
-      break;
-    default:
-      card_spacing = "";
-      break;
-  }
   return (
-    <div className={`${styles.services_card} ${card_spacing}`}>
+    <div className={`${styles.services_card}`}>
       <Row>
         <Col xs={12} sm={12} md={12} lg={12} xl={12}>
           <div className={`${styles.card_text_container} pl-2`}>
@@ -43,7 +26,18 @@ function Card({ data }) {
         </Col>
         <Col xs={12} sm={12} md={12} lg={12} xl={12}>
           <div className={`${styles.card_avatar_container} pr-2`}>
-            <Avatar className={`${styles.card_avatar}`} />
+            <Avatar
+              className={`${styles.card_avatar} pt-3`}
+              src={
+                <Image
+                  src={"/Services & Activities lcons set2.svg"}
+                  // className={`mt-2`}
+                  alt="card-img"
+                  width="100"
+                  height="100"
+                />
+              }
+            />
           </div>
         </Col>
       </Row>
@@ -53,15 +47,28 @@ function Card({ data }) {
 
 export default function ServicesActivities() {
   const cardsData = [
-    { title: "Wellbeing Awareness Sessions", spacing: "m_br" },
-    { title: "Family & Social Sessions", spacing: "m_bl" },
-    { title: "Religious Activities Sessions", spacing: "m_tr" },
-    { title: "Entertainment & Online Game Sessions", spacing: "m_tl" },
+    { title: "Wellbeing Awareness Sessions" },
+    { title: "Family & Social Sessions" },
+    { title: "Religious Activities Sessions" },
+    { title: "Entertainment & Online Game Sessions" },
   ];
   return (
-    <div className={`${styles.service_container} pt-5`}>
+    <div className={`${styles.service_container} py-5`}>
+      <CommonSectionHeader
+        title={"Services & Activities"}
+        sliderSection={true}
+      />
       <Row>
-        <Col xs={0} sm={0} md={24} lg={8} xl={8}>
+        <Col xs={0} sm={0} md={24} lg={24} xl={24}>
+          <Row gutter={[16, 16]}>
+            {cardsData.map((cardData, i) => (
+              <Col span={8}>
+                <Card data={cardData} />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        {/* <Col xs={0} sm={0} md={24} lg={8} xl={8}>
           <div className={`pt-5 ${styles.service_left_container}`}>
             <h3 className={`${styles.services_tilte}`}>
               {"Services & Activities"}
@@ -81,7 +88,7 @@ export default function ServicesActivities() {
               title={"Services & Activities"}
             />
           </div>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );
