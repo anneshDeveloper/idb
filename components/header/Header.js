@@ -4,7 +4,7 @@ import { MenuOutlined, SearchOutlined, UserOutlined } from "@ant-design/icons";
 //css
 import styles from "./header.module.sass";
 
-function Header({ logo }) {
+function Header({ logo, setDrawerVisbility }) {
   const [form] = Form.useForm();
 
   return (
@@ -23,8 +23,13 @@ function Header({ logo }) {
                         className={`${styles.font_white} ${styles.menu_icon} pr-4`}
                       />
                     }
+                    onClick={() => setDrawerVisbility(true)}
                   />
-                  <Button type="text" className={`${styles.menu_btn} mt-2`}>
+                  <Button
+                    type="text"
+                    className={`${styles.menu_btn} mt-2`}
+                    onClick={() => setDrawerVisbility(true)}
+                  >
                     Menu
                   </Button>
                 </div>

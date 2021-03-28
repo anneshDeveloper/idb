@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Row, Col } from "antd";
 //component
-import AppBtn from "../appBtn/AppBtn";
+import AppBtn from "../landing/appBtn/AppBtn";
 import ResponsiveView from "./ResponsiveView";
 //service
 import { subscribeChangeHandler, onClickSubscribeHandler } from "./localService";
