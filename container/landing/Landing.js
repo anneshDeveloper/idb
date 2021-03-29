@@ -1,14 +1,14 @@
 //component
-import ComponentHead from "../../components/head/Head";
-import Header from "../../components/header/Header";
-import BannerBG from "../../components/landing/carousel/Carousel";
+import Layout from "../../container/layout/Layout";
+// import ComponentHead from "../../components/head/Head";
+// import Header from "../../components/header/Header";
+import Banner from "../../components/landing/banner/Banner";
 import ServicesActivities from "../../components/landing/servicesActivities/ServicesActivities";
 import WhatsNew from "../../components/landing/whatsNew/WhatsNew";
 import UpcomingEvents from "../../components/landing/upcomingEvents/UpcomingEvents";
 import Testimonials from "../../components/landing/testimonials/Testimonials";
 import ContactUsSection from "../../components/landing/contactUsSection/ContactUsSection"
-import Footer from "../../components/footer/Footer";
-import Layout from "../../container/layout/Layout";
+// import Footer from "../../components/footer/Footer";
 
 export default function Landing({
   news,
@@ -20,17 +20,12 @@ export default function Landing({
   return (
     <>
       <Layout socialMediaIcon={socialMediaIcon} contactUsData={contactUsData}>
-        <BannerBG bannerData={bannerData} />
+        <Banner bannerData={bannerData} />
         <ServicesActivities />
         {/* <WhatsNew newsData={news} /> */}
         <Testimonials />
         <UpcomingEvents eventsData={eventsData} />
         <ContactUsSection contactUsData={contactUsData}/>
-        {/* <Footer
-        logo={"/StaffSocialClub-Logo_footer.png"}
-        socialMediaIcon={socialMediaIcon}
-        contactUsData={contactUsData}
-      /> */}
       </Layout>
     </>
   );

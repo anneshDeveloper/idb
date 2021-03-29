@@ -1,21 +1,54 @@
 @import '../../../styles/variable'
 
+.testimonial_bg
+  height: 458px
+  width: $full_width
+  position: $position_relative
+  &::before
+    content: '\A'
+    position: $position_absolute
+    background: $testimonial_background_color
+    top: $zero
+    bottom: $zero
+    left: $zero
+    width: $eight_percen
+
 .testimonials_container
+  display: $flex
+  justify-content: $center
+  align-items: $center
   margin: $zero $auto
+  height: 458px
   @extend %container_width
 
-.testimonials_text
-  width: 85%
+.testimonials_subcontainer
+  width: $full_width
+  display: $flex
+  height: 250px
 
 .testimonials_title
-  font-size: 35px
+  text-align: $left
+  @extend %font_size_32
   font-weight: $six_hundred
-  @extend %font_family_lato
+  @extend %font_family_oswald
 
 .testimonials_des
   color: #525252
+  text-align: $left
   @extend %font_size_24
   @extend %font_family_roboto
+
+.before_des_img,
+.after_des_img
+  width: $full_width
+  height: $full_width
+  background-repeat: $no_repeat
+
+.before_des_img
+  background-position: $zero $fifty_percen
+
+.after_des_img
+  background-position: $full_width $ten_percen
 
 .testimonials_author
   @extend %font_size_24
@@ -25,10 +58,17 @@
 
 .image_container
   @extend %display_flex
-  background-color: $white_color
   justify-content: $center
   align-items: $center
-  height: 387px
+  height: 250px
+
+.testimonials_image,
+.testimonials_image_box
+  border-radius: 32px
+
+.testimonials_image_box
+  height: 200px
+  box-shadow: 30px 30px #FDCF3C
 
 @media only screen and (max-width: $beakpoint_laptop_sm)
   .testimonials_container
@@ -37,3 +77,10 @@
 @media only screen and (max-width: $beakpoint_tablet)
   .testimonials_container
     width: 759px
+
+  .testimonial_bg,
+  .testimonials_container
+    height: 600px
+
+  .testimonials_subcontainer
+    height: $auto

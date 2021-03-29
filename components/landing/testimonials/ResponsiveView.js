@@ -7,46 +7,61 @@ import AppBtn from "../appBtn/AppBtn";
 import styles from "./testimonials.module.sass";
 
 export default function ResponsiveView({ view }) {
-    return (
+  return (
+    <div className={`${styles.testimonials_container}`}>
       <div
-        className={`d-flex justify-content-center ${styles.testimonials_container} pt-5`}
+        className={`${styles.testimonials_subcontainer} ${
+          view === "desktop" ? "px-3" : "px-1"
+        }`}
       >
-        <div className={`h-100 w-100 ${view === "desktop" ? "px-3" : "px-1"}`}>
-          <Row>
-            <Col xs={15} sm={15} md={15} lg={15} xl={15}>
-              <div className={`${styles.testimonials_text}`}>
-                <h3 className={`${styles.testimonials_title} mb-5`}>
-                  Testimonials
-                </h3>
-                <p className={`${styles.testimonials_des} mb-5`}>
-                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip.
-                </p>
-                <h5 className={`${styles.testimonials_author}`}>Ayaz Ahamed</h5>
-              </div>
-            </Col>
-            <Col xs={9} sm={9} md={9} lg={9} xl={9}>
-              <div className={`${styles.image_container} w-100 mb-5`}>
+        <Row>
+          <Col xs={17} sm={17} md={16} lg={17} xl={17}>
+            <div /* className={`${styles.testimonials_text}`} */>
+              <h3 className={`${styles.testimonials_title}`}>Testimonials</h3>
+              <Row>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                  <div
+                    className={`${styles.before_des_img}`}
+                    style={{
+                      backgroundImage: `url(/context/testimonialsDoubleQuote.svg)`,
+                    }}
+                  ></div>
+                </Col>
+                <Col xs={18} sm={18} md={18} lg={18} xl={18}>
+                  <p className={`${styles.testimonials_des}`}>
+                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                    ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip.
+                  </p>
+                </Col>
+                <Col xs={3} sm={3} md={3} lg={3} xl={3}>
+                  <div
+                    className={`${styles.after_des_img}`}
+                    style={{
+                      backgroundImage: `url(/context/testimonialsDoubleQuote.svg)`,
+                    }}
+                  ></div>
+                </Col>
+              </Row>
+              <h5 className={`${styles.testimonials_author}`}>Ayaz Ahamed</h5>
+            </div>
+          </Col>
+          <Col xs={7} sm={7} md={8} lg={7} xl={7}>
+            <div className={`${styles.image_container} w-100`}>
+              <div className={`${styles.testimonials_image_box}`}>
                 <Image
-                  src={'/testimonial.PNG'}
+                  src={"/testimonial.PNG"}
                   alt="card-img"
-                  width="416"
-                  height="387"
+                  width="200"
+                  height="200"
+                  className={`${styles.testimonials_image}`}
                 />
               </div>
-              <div className={`d-flex justify-content-end w-100`}>
-                <AppBtn
-                  text={`See All`}
-                  prefix={""}
-                  suffix={<ArrowRightOutlined className={`ml-2 pt-1`} />}
-                  mode={'dark'}
-                />
-              </div>
-            </Col>
-          </Row>
-        </div>
+            </div>
+          </Col>
+        </Row>
       </div>
-    );
-  }
+    </div>
+  );
+}

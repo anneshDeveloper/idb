@@ -1,42 +1,16 @@
 import Image from "next/image";
 import moment from "moment";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 import { Button } from "antd";
+//component
+import AppSlider from "../../appSlider/AppSlider";
 //css
-import styles from "./carousel.module.sass";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import styles from "./banner.module.sass";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export default function BannerBG({ bannerData }) {
+export default function Banner({ bannerData }) {
   return (
-    <Carousel
-      autoPlay
-      infiniteLoop
-      showThumbs={false}
-      showStatus={false}
-      interval={30000}
-      renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
-        hasPrev && (
-          <button
-            onClick={clickHandler}
-            type="button"
-            aria-label="next slide / item"
-            style={{backgroundImage: `url('/Slide_Icon_set2.svg')`}}
-            className={`${styles.slide_btn} control-arrow control-prev`}
-          ></button>
-        )
-      }
-      renderArrowNext={(clickHandler, hasPrev, labelPrev) =>
-        hasPrev && (
-          <button
-            onClick={clickHandler}
-            type="button"
-            aria-label="next slide / item"
-            style={{backgroundImage: `url('/Slide_Icon_set2.svg')`}}
-            className={`${styles.slide_btn} ${styles.image_position} control-arrow control-next`}
-          ></button>
-        )
-      }
-    >
+    <AppSlider btnIcon={`/context/slider_btn_icon_light.svg`} showIndicators={true}>
       {bannerData.map((banner) => (
         <div className={`${styles.banner_container}`}>
           <Image
@@ -71,6 +45,6 @@ export default function BannerBG({ bannerData }) {
           </p>
         </div>
       ))}
-    </Carousel>
+    </AppSlider>
   );
 }
