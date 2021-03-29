@@ -31,7 +31,6 @@ function Card({ data }) {
               src={
                 <Image
                   src={"/Services & Activities lcons set2.svg"}
-                  // className={`mt-2`}
                   alt="card-img"
                   width="100"
                   height="100"
@@ -49,26 +48,43 @@ export default function ServicesActivities() {
   const cardsData = [
     { title: "Wellbeing Awareness Sessions" },
     { title: "Family & Social Sessions" },
+    { title: "Virtual Sports and Recreational" },
     { title: "Religious Activities Sessions" },
     { title: "Entertainment & Online Game Sessions" },
+    { title: "Educational Courses" },
+    { title: "IsDB Group Activities" },
+    { title: "Buy and Sell Sessions" },
   ];
   return (
-    <div className={`${styles.service_container} py-5`}>
-      <CommonSectionHeader
-        title={"Services & Activities"}
-        sliderSection={true}
-      />
-      <Row>
-        <Col xs={0} sm={0} md={24} lg={24} xl={24}>
-          <Row gutter={[16, 16]}>
-            {cardsData.map((cardData, i) => (
-              <Col span={8}>
-                <Card data={cardData} />
-              </Col>
-            ))}
-          </Row>
-        </Col>
-        {/* <Col xs={0} sm={0} md={24} lg={8} xl={8}>
+    <div
+      style={{ backgroundImage: `url('/background/ServicesActivities.svg')` }}
+      className={`${styles.service_bg}`}
+    >
+      <div className={`${styles.service_container} py-5`}>
+        <CommonSectionHeader
+          title={"Services & Activities"}
+          sliderSection={false}
+        />
+        <Row>
+          <Col xs={0} sm={0} md={0} lg={24} xl={24}>
+            <Row gutter={[16, 16]}>
+              {cardsData.map((cardData) => (
+                <Col span={8}>
+                  <Card data={cardData} />
+                </Col>
+              ))}
+            </Row>
+          </Col>
+          <Col xs={0} sm={0} md={24} lg={0} xl={0}>
+            <Row gutter={[16, 16]} className={`w-100 pl-3`}>
+              {cardsData.map((cardData) => (
+                <Col span={12}>
+                  <Card data={cardData} />
+                </Col>
+              ))}
+            </Row>
+          </Col>
+          {/* <Col xs={0} sm={0} md={24} lg={8} xl={8}>
           <div className={`pt-5 ${styles.service_left_container}`}>
             <h3 className={`${styles.services_tilte}`}>
               {"Services & Activities"}
@@ -89,7 +105,8 @@ export default function ServicesActivities() {
             />
           </div>
         </Col> */}
-      </Row>
+        </Row>
+      </div>
     </div>
   );
 }

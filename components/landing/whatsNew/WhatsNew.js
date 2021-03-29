@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Row, Col, Button } from "antd";
 // component
 import CommonSectionCardView from "../commonSectionCardView/CommonSectionCardView";
+import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 //css
 import styles from "./whats-new.module.sass";
 
@@ -31,23 +32,29 @@ function Card({ data }) {
 export default function WhatsNew({ newsData }) {
   let cardsData = newsData.slice(0, 3);
   return (
-    <Row>
-      <Col xs={0} sm={0} md={0} lg={24} xl={24}>
-        <CommonSectionCardView
-          card={Card}
-          title={`What's New`}
-          view={"desktop"}
-          cardsData={cardsData}
-        />
-      </Col>
-      <Col xs={0} sm={0} md={24} lg={0} xl={0}>
-        <CommonSectionCardView
-          card={Card}
-          title={`What's New`}
-          view={"tablet"}
-          cardsData={cardsData}
-        />
-      </Col>
-    </Row>
+    <div className={`${styles.news_container} py-5`}>
+      <CommonSectionHeader
+        title={"News & Publications"}
+        sliderSection={true}
+      />
+      <Row>
+        <Col xs={0} sm={0} md={0} lg={24} xl={24}>
+          <CommonSectionCardView
+            card={Card}
+            title={`What's New`}
+            view={"desktop"}
+            cardsData={cardsData}
+          />
+        </Col>
+        <Col xs={0} sm={0} md={24} lg={0} xl={0}>
+          <CommonSectionCardView
+            card={Card}
+            title={`What's New`}
+            view={"tablet"}
+            cardsData={cardsData}
+          />
+        </Col>
+      </Row>
+    </div>
   );
 }

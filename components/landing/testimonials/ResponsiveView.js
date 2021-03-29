@@ -41,6 +41,7 @@ export default function ResponsiveView({ view }) {
                   text={`See All`}
                   prefix={""}
                   suffix={<ArrowRightOutlined className={`ml-2 pt-1`} />}
+                  mode={'dark'}
                 />
               </div>
             </Col>

@@ -1,3 +1,5 @@
+/* @import url("../components/landing/carousel/carousel.module.sass"); */
+
 html,
 body {
   padding: 0;
@@ -17,4 +19,9 @@ a {
 
 .font_white {
   color: #fff !important;
+}
+
+.carousel .control-prev.control-arrow:before,
+.carousel .control-next.control-arrow:before {
+  border: 0 !important;
 }

@@ -6,7 +6,7 @@ import styles from "./footer.module.sass";
 export default function ResponsiveView({ view, logo, socialMediaIcon }) {
     socialMediaIcon = socialMediaIcon.slice(0, 4);
     return (
-      <div className={`${styles.navigation_container_bg}`}>
+      <div className={`${styles.navigation_container_bg} pt-5`}>
         <div
           className={`${styles.navigation_container} ${
             view === "tablet" ? "px-2" : "px-5"

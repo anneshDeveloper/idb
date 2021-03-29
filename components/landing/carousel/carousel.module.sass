@@ -13,8 +13,11 @@
   height: $sixty_px
   opacity: $one $important
   border-radius: 50% $important
-  background-color: transparent $important
-  border: 3px $solid $white_color $important
+  background-color: $transparent $important
+
+.image_position
+  background-repeat: $no_repeat $important
+  background-position: $full_width 0% $important
 
 .text
   background-color: #00000000 $important
@@ -24,7 +27,7 @@
   @extend %text_align_left
 
 .text_title
-  font-size: 32px
+  @extend %font_size_32
   color: $white_color
   font-weight: $five_hundred
   @extend %font_family_oswald

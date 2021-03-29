@@ -6,6 +6,7 @@ import ServicesActivities from "../../components/landing/servicesActivities/Serv
 import WhatsNew from "../../components/landing/whatsNew/WhatsNew";
 import UpcomingEvents from "../../components/landing/upcomingEvents/UpcomingEvents";
 import Testimonials from "../../components/landing/testimonials/Testimonials";
+import ContactUsSection from "../../components/landing/contactUsSection/ContactUsSection"
 import Footer from "../../components/footer/Footer";
 import Layout from "../../container/layout/Layout";
 
@@ -21,9 +22,10 @@ export default function Landing({
       <Layout socialMediaIcon={socialMediaIcon} contactUsData={contactUsData}>
         <BannerBG bannerData={bannerData} />
         <ServicesActivities />
-        <WhatsNew newsData={news} />
+        {/* <WhatsNew newsData={news} /> */}
         <Testimonials />
         <UpcomingEvents eventsData={eventsData} />
+        <ContactUsSection contactUsData={contactUsData}/>
         {/* <Footer
         logo={"/StaffSocialClub-Logo_footer.png"}
         socialMediaIcon={socialMediaIcon}

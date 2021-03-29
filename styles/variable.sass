@@ -2,7 +2,8 @@ $white_color: #fff
 $white_color_shade2: #f2f2f2
 $black_color: #000
 $navyblue_color: #223771
-$app_btn_border: #051f1a
+$app_btn_border_dark: #051f1a
+$app_btn_border_light: $white_color
 $grayishwhite_color: #F4F4F4
 $yellow_color: #fdcf3c
 $important: !important
@@ -12,6 +13,7 @@ $position_relative: relative
 $flex: flex
 $zero: 0
 $one: 1
+$three_hundred: 300
 $five_hundred: 500
 $six_hundred: 600
 $auto: auto
@@ -25,10 +27,17 @@ $sixty_px: 60px
 $one_hundred_twentyfive_px: 125px
 $one_hundred_thirtysix_px: 136px
 $two_hundred_two_px: 202px
+$fourtyfive_percen: 45%
+$sixty_percen: 60%
+$seventy_percen: 70%
 $eight_percen: 80%
 $full_width: 100%
 $beakpoint_laptop_sm: 1024px
 $beakpoint_tablet: 1000px
+$no_repeat: no-repeat
+$transparent: transparent
+$oswald: 'Oswald'
+$roboto: 'Roboto'
 
 %container_width
     width: 1140px
@@ -37,10 +46,10 @@ $beakpoint_tablet: 1000px
     font-family: 'Lato' $important
 
 %font_family_roboto
-    font-family: 'Roboto' $important
+    font-family: $roboto $important
 
 %font_family_oswald
-    font-family: 'Oswald' $important
+    font-family: $oswald $important
 
 %font_size_14
     font-size: 14px
@@ -72,8 +81,11 @@ $beakpoint_tablet: 1000px
 %box_shadow
     box-shadow: $zero $three_px 12px #0000003c $important
 
-%app_btn_border
-    border: $three_px $solid $app_btn_border $important
+%app_btn_border_dark
+    border: $three_px $solid $app_btn_border_dark $important
+
+%app_btn_border_light
+    border: $three_px $solid $app_btn_border_light $important
 
 %banner_height
     height: $banner_height

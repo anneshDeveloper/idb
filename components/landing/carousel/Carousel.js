@@ -20,6 +20,7 @@ export default function BannerBG({ bannerData }) {
             onClick={clickHandler}
             type="button"
             aria-label="next slide / item"
+            style={{backgroundImage: `url('/Slide_Icon_set2.svg')`}}
             className={`${styles.slide_btn} control-arrow control-prev`}
           ></button>
         )
@@ -30,7 +31,8 @@ export default function BannerBG({ bannerData }) {
             onClick={clickHandler}
             type="button"
             aria-label="next slide / item"
-            className={`${styles.slide_btn} control-arrow control-next`}
+            style={{backgroundImage: `url('/Slide_Icon_set2.svg')`}}
+            className={`${styles.slide_btn} ${styles.image_position} control-arrow control-next`}
           ></button>
         )
       }
