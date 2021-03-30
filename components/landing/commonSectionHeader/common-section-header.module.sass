@@ -1,21 +1,23 @@
 @import '../../../styles/variable'
+$slider_btn_color: #223771
 
 .title
     @extend %font_size_32
     @extend %font_family_oswald
 
 .slider_btn
-    border:3px $solid #223771
+    border: 3px $solid $slider_btn_color
     border-radius: 50%
     width: $sixty_px
     height: $sixty_px
     &:focus,
     &:hover
-        border:3px $solid #223771
+        border: 3px $solid $slider_btn_color
 
-.font_size_20
+.slider_btn_icon
+    color: $slider_btn_color
     @extend %font_size_20
-        
+
 @media only screen and (max-width: $beakpoint_tablet)
     .title
-        padding-left: 15px 
+        padding-left: 15px

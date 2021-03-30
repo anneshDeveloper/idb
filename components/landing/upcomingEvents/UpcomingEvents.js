@@ -1,81 +1,83 @@
-import Image from "next/image";
-import { Row, Col } from "antd";
+import React, { useState, useEffect } from "react";
+import { Row, Col, Button } from "antd";
 // component
-import CommonSectionCardView from "../commonSectionCardView/CommonSectionCardView";
+import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
+import AppMultiSlider from "../../appMultiSlider/AppMultiSlider";
 //css
 import styles from "./upcoming-events.module.sass";
 
-function Card({ data, view }) {
-  const base_url = process.env.BASE_URL;
+const responsive = {
+  0: { items: 1 },
+  568: { items: 2.25 },
+  1000: { items: 3.25 },
+  1024: { items: 4.5 },
+  1440: { items: 9 },
+};
+
+function Card({ bg, bgImage }) {
   return (
-    <div className={`${styles.events_card} mb-4`}>
-      <div className={`${styles.events_card_image}`}>
-        <Image
-          src={base_url + data.EventImage[0].formats.thumbnail.url}
-          alt={data.EventImage[0].formats.thumbnail.hash}
-          width="352"
-          height="221"
-        />
+    <div
+      className={`${styles.event_card} p-4`}
+      style={{ backgroundImage: `url(${bgImage})`, backgroundColor: bg }}
+    >
+      <div className={`${styles.event_card_date} mb-5 py-1`} style={{ color: bg }}>
+        <p className={`${styles.date} mt-2 mb-0`}>21</p>
+        <p className={`${styles.month} m-0`}>April</p>
       </div>
-      <div className={`p-3`}>
-        <Row>
-          <Col xs={6} sm={6} md={6} lg={6} xl={6}>
-            <div
-              className={`d-flex justify-content-center align-items-center h-100 flex-column`}
-            >
-              <p className={`${styles.events_card_date_month} m-0`}>
-                {data.EventCreatedDate.split(",")[0]
-                  .split(" ")[0]
-                  .toUpperCase()
-                  .substring(0, 3)}
-              </p>
-              <p className={`${styles.events_card_date_day} m-0`}>
-                {data.EventCreatedDate.split(",")[0].split(" ")[1]}
-              </p>
-            </div>
-          </Col>
-          <Col xs={18} sm={18} md={18} lg={18} xl={18}>
-            <h6 className={`${styles.events_card_title} m-0 mb-2`}>
-              {view === "tablet"
-                ? data.EventTitle.length > 26
-                  ? `${data.EventTitle.substring(0, 26)}...`
-                  : data.EventTitle
-                : data.EventTitle.length > 32
-                ? `${data.EventTitle.substring(0, 32)}...`
-                : data.EventTitle}
-            </h6>
-            <p className={`${styles.events_card_des} m-0`}>
-              {data.EventDescription.length > 60
-                ? `${data.EventDescription.substring(0, 60)}...`
-                : data.EventDescription}
-            </p>
-          </Col>
-        </Row>
+      <h3 className={`${styles.event_title} pr-4 mb-4`}>Application deadline for lorem ipsum alt selto</h3>
+      <p className={`${styles.event_time}`}>3:30 PM - 5:30 PM</p>
+      <div className={`d-flex justify-content-center`}>
+        <Button type="text" size={`large`} className={`${styles.event_button}`} shape="round">Register Now</Button>
       </div>
     </div>
   );
 }
 
+const items = [
+  <div className={`item ${styles.event_card_container}`} data-value="1">
+    <Card bg={"#FDCF3C"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+  <div className={`item ${styles.event_card_container}`} data-value="2">
+    <Card bg={"#24B3B7"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+  <div className={`item ${styles.event_card_container}`} data-value="3">
+    <Card bg={"#223771"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+  <div className={`item ${styles.event_card_container}`} data-value="4">
+    <Card bg={"#FC6273"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+  <div className={`item ${styles.event_card_container}`} data-value="5">
+    <Card bg={"#6B3AD6"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+  <div className={`item ${styles.event_card_container}`} data-value="6">
+    <Card bg={"#299155"} bgImage={"/Activities_Icons_Set2.svg"} />
+  </div>,
+];
+
 export default function UpcomingEvents({ eventsData }) {
-  let cardsData = eventsData.slice(0, 6);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const slidePrev = () => setActiveIndex(activeIndex - 1);
+  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const onSlideChanged = ({ item }) => setActiveIndex(item);
   return (
-    <Row>
-      <Col xs={0} sm={0} md={0} lg={24} xl={24}>
-        <CommonSectionCardView
-          card={Card}
-          title={`Upcoming Events`}
-          view={"desktop"}
-          cardsData={cardsData}
+    <Row className={`py-5`}>
+      <div className={`${styles.events_container}`}>
+        <CommonSectionHeader
+          title={"Upcoming Events & Activities"}
+          sliderSection={true}
+          onClickPrev={slidePrev}
+          onClickNext={slideNext}
         />
-      </Col>
-      <Col xs={0} sm={0} md={24} lg={0} xl={0}>
-        <CommonSectionCardView
-          card={Card}
-          title={`Upcoming Events`}
-          view={"tablet"}
-          cardsData={cardsData}
-        />
-      </Col>
+      </div>
+      <AppMultiSlider
+        responsive={responsive}
+        items={items}
+        activeIndex={activeIndex}
+        onSlideChanged={onSlideChanged}
+        paddingLeft={100}
+        paddingRight={50}
+      />
     </Row>
   );
 }
