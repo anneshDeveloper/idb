@@ -1,21 +1,33 @@
 @import '../../../styles/variable'
-$slider_btn_color: #223771
 
 .title
     @extend %font_size_32
     @extend %font_family_oswald
 
 .slider_btn
-    border: 3px $solid $slider_btn_color
+    border: 3px $solid $navyblue_color
     border-radius: 50%
     width: $sixty_px
     height: $sixty_px
     &:focus,
     &:hover
-        border: 3px $solid $slider_btn_color
+        border: 3px $solid $navyblue_color
+
+.slider_btn_disable
+    border: 3px $solid $navyblue_lite_color
+    border-radius: 50%
+    width: $sixty_px
+    height: $sixty_px
+    &:focus,
+    &:hover
+        border: 3px $solid $navyblue_lite_color    
 
 .slider_btn_icon
-    color: $slider_btn_color
+    color: $navyblue_color
+    @extend %font_size_20
+
+.slider_btn_icon_disable
+    color: $navyblue_lite_color
     @extend %font_size_20
 
 @media only screen and (max-width: $beakpoint_tablet)

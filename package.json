@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.5.0",
+    "@syncfusion/ej2-base": "^19.1.54",
+    "@syncfusion/ej2-react-calendars": "^19.1.54",
     "antd": "^4.13.1",
     "moment": "^2.29.1",
     "next": "10.0.8",

@@ -10,6 +10,7 @@ import Testimonials from "../../components/landing/testimonials/Testimonials";
 import ContactUsSection from "../../components/landing/contactUsSection/ContactUsSection";
 import Gallery from "../../components/landing/gallery/Gallery";
 import VideoSection from "../../components/landing/videoSection/VideoSection";
+import Calendar from "../../components/landing/calendar/Calendar";
 
 export default function Landing({
   news,
@@ -23,9 +24,17 @@ export default function Landing({
       <Layout socialMediaIcon={socialMediaIcon} contactUsData={contactUsData}>
         <Banner bannerData={bannerData} />
         <ServicesActivities />
-        <VideoSection/>
-        <NewsPublications newsData={news} />
-        <Testimonials />
+        <VideoSection />
+        <div
+          style={{
+            backgroundImage: `url(/background/newsTestimoni.svg)`,
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <NewsPublications newsData={news} />
+          <Testimonials />
+        </div>
+        <Calendar />
         <UpcomingEvents eventsData={eventsData} />
         <Gallery />
         <ContactUsSection contactUsData={contactUsData} />

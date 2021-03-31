@@ -2,25 +2,65 @@ import { Row, Col, Button } from "antd";
 // css
 import styles from "./common-section-header.module.sass";
 
-export default function CommonSectionHeader({ title, sliderSection,onClickPrev,onClickNext }) {
+export default function CommonSectionHeader({
+  title,
+  sliderSection,
+  prevBtn,
+  nextBtn,
+  onClickPrev,
+  onClickNext,
+}) {
   return (
     <Row className="mb-3">
       <Col xs={0} sm={0} md={12} lg={12} xl={12} className={`${styles.title}`}>
         {title}
       </Col>
-      <Col xs={0} sm={0} md={12} lg={12} xl={12} className={`d-flex justify-content-end`}>
+      <Col
+        xs={0}
+        sm={0}
+        md={12}
+        lg={12}
+        xl={12}
+        className={`d-flex justify-content-end`}
+      >
         {sliderSection ? (
           <>
             <Button
               type="text"
-              className={`${styles.slider_btn} mx-2`}
-              icon={<i className={`fa fa-chevron-left ${styles.slider_btn_icon}`} aria-hidden="true"></i>}
+              className={`${
+                prevBtn === "disable"
+                  ? styles.slider_btn_disable
+                  : styles.slider_btn
+              } mx-2`}
+              icon={
+                <i
+                  className={`fa fa-chevron-left ${
+                    prevBtn === "disable"
+                      ? styles.slider_btn_icon_disable
+                      : styles.slider_btn_icon
+                  }`}
+                  aria-hidden="true"
+                ></i>
+              }
               onClick={onClickPrev}
             />
             <Button
               type="text"
-              className={`${styles.slider_btn} mx-2`}
-              icon={<i className={`fa fa-chevron-right ${styles.slider_btn_icon}`} aria-hidden="true"></i>}
+              className={`${
+                nextBtn === "disable"
+                  ? styles.slider_btn_disable
+                  : styles.slider_btn
+              } mx-2`}
+              icon={
+                <i
+                  className={`fa fa-chevron-right ${
+                    nextBtn === "disable"
+                      ? styles.slider_btn_icon_disable
+                      : styles.slider_btn_icon
+                  }`}
+                  aria-hidden="true"
+                ></i>
+              }
               onClick={onClickNext}
             />
           </>

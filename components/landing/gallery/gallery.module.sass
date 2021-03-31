@@ -1,26 +1,30 @@
 @import '../../../styles/variable'
 
+.gallery_bg
+  background-repeat: $no_repeat
+  background-size: $full_width 120%
+
 .gallery_container
-    margin: $zero $auto
-    @extend %container_width
+  margin: $zero $auto
+  @extend %container_width
 
 .slider_container_duo,
 .slider_container_single
-    display: $flex
-    flex-direction: column
-    width: 260px
-    height: 520px
-    justify-content: $center
+  display: $flex
+  flex-direction: column
+  width: 260px
+  height: 520px
+  justify-content: $center
 
 // .slider_container_single
 //     justify-content: $center
 
 .gallery_card
-    box-shadow: 1px 1px 12px #00000029
-    border-radius: 8px
-    transition: transform 1.25s
-    &:hover
-        transform: scale(1.1,1.1)
+  box-shadow: 1px 1px 12px #00000029
+  border-radius: 8px
+  transition: transform 1.25s
+  &:hover
+    transform: scale(1.1,1.1)
 
 @media only screen and (max-width: $beakpoint_laptop_sm)
   .gallery_container

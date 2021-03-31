@@ -92,7 +92,7 @@ function getSliderItems(imgArray) {
         //     ) : null}
         //   </div>
         // );
-        console.log("items", items);
+        // console.log("items", items);
       }
     });
     return items;
@@ -261,29 +261,40 @@ export default function Gallery() {
   const slideNext = () => setActiveIndex(activeIndex + 1);
   const onSlideChanged = ({ item }) => setActiveIndex(item);
 
+
+  
   let imgUrl = "/testimonial.PNG";
   let imgArray = getImgArray(imgUrl);
   let noOfImgContainer = getNoOfImgContainer(imgArray);
   getSliderItems(imgArray);
-  //   console.log("-----", typeof sliderItems);
   return (
-    <Row>
-      <div className={`${styles.gallery_container}`}>
-        <CommonSectionHeader
-          title={"Gallery"}
-          sliderSection={true}
-          onClickPrev={slidePrev}
-          onClickNext={slideNext}
+    <div
+      className={`${styles.gallery_bg}`}
+      style={{
+        backgroundImage: `url(/background/gallery.svg)`,
+      }}
+    >
+      <Row>
+        <div className={`${styles.gallery_container}`}>
+          <CommonSectionHeader
+            title={"Gallery"}
+            sliderSection={true}
+            // prevBtn={}
+            // nextBtn={}
+            onClickPrev={slidePrev}
+            onClickNext={slideNext}
+          />
+        </div>
+        <AppMultiSlider
+          responsive={responsive}
+          items={items}
+          activeIndex={activeIndex}
+          onSlideChanged={onSlideChanged}
+          paddingLeft={100}
+          paddingRight={50}
+          animationType={'slide'}
         />
-      </div>
-      <AppMultiSlider
-        responsive={responsive}
-        items={items}
-        activeIndex={activeIndex}
-        onSlideChanged={onSlideChanged}
-        paddingLeft={100}
-        paddingRight={50}
-      />
-    </Row>
+      </Row>
+    </div>
   );
 }

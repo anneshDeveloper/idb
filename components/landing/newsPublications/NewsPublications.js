@@ -44,84 +44,74 @@ const items = [];
 const itemsTab = [];
 
 function setItem(data) {
-  items.push(
-    <div className={`${styles.news_container}`} data-value="1">
-      <Row gutter={[16, 16]}>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[0]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[1]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[2]} />
-        </Col>
-      </Row>
-    </div>
-  );
-  itemsTab.push(
-    <div className={`${styles.news_container}`} data-value="1">
-      <Row gutter={[8, 8]}>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[0]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[1]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[2]} />
-        </Col>
-      </Row>
-    </div>
-  );
-  items.push(
-    <div className={`${styles.news_container}`} data-value="1">
-      <Row gutter={[16, 16]}>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[0]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[1]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[2]} />
-        </Col>
-      </Row>
-    </div>
-  );
-  itemsTab.push(
-    <div className={`${styles.news_container}`} data-value="1">
-      <Row gutter={[16, 16]}>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[0]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[1]} />
-        </Col>
-        <Col span={8} className={`d-flex justify-content-center my-4`}>
-          <Card data={data[2]} />
-        </Col>
-      </Row>
-    </div>
-  );
+  data.forEach((item, index) => {
+    if ((index + 1) % 3 === 0) {
+      items.push(
+        <div className={`${styles.news_container}`} data-value="1">
+          <Row gutter={[16, 16]}>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index - 2]} />
+            </Col>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index - 1]} />
+            </Col>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index]} />
+            </Col>
+          </Row>
+        </div>
+      );
+      itemsTab.push(
+        <div className={`${styles.news_container}`} data-value="1">
+          <Row gutter={[8, 8]}>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index - 2]} />
+            </Col>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index - 1]} />
+            </Col>
+            <Col span={8} className={`d-flex justify-content-center my-4`}>
+              <Card data={data[index]} />
+            </Col>
+          </Row>
+        </div>
+      );
+    }
+  });
 }
 
 export default function NewsPublications({ newsData }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prevBtn, setPrevBtn] = useState("disable");
+  const [nextBtn, setNextBtn] = useState("enable");
+  let finalIndex = Math.floor(parseInt(newsData.length) / 3);
 
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const slidePrev = () => {
+    if (activeIndex > 0) setActiveIndex(activeIndex - 1);
+  };
+
+  const slideNext = () => {
+    if (activeIndex < finalIndex - 1) setActiveIndex(activeIndex + 1);
+  };
+
   const onSlideChanged = ({ item }) => setActiveIndex(item);
 
-  let cardsData = newsData.slice(0, 3);
+  useEffect(() => {
+    if (activeIndex === 0) setPrevBtn("disable");
+    else setPrevBtn("enable");
+    if (activeIndex === finalIndex - 1) setNextBtn("disable");
+    else setNextBtn("enable");
+  }, [activeIndex]);
 
-  setItem(cardsData);
+  setItem(newsData);
 
   return (
     <div className={`${styles.news_container} py-5`}>
       <CommonSectionHeader
         title={"News & Publications"}
         sliderSection={true}
+        prevBtn={prevBtn}
+        nextBtn={nextBtn}
         onClickPrev={slidePrev}
         onClickNext={slideNext}
       />
@@ -134,6 +124,7 @@ export default function NewsPublications({ newsData }) {
             onSlideChanged={onSlideChanged}
             paddingLeft={0}
             paddingRight={0}
+            animationType={"fadeout"}
           />
         </Col>
         <Col xs={0} sm={0} md={24} lg={0} xl={0}>

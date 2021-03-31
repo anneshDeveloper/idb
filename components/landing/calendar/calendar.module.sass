@@ -1,0 +1,89 @@
+@import '../../../styles/variable'
+
+.calender_bg
+    background-repeat: $no_repeat
+    background-size: $full_width 110%
+
+.calender_container
+    margin: $zero $auto
+    @extend %container_width
+
+.calender_subcontainer
+    border-radius: 12px
+    box-shadow: 1px 1px 12px #00000029
+
+.main
+    height: 675px
+
+.slider
+    width: $full_width
+    height: 770px
+    background: #F1F6FF
+
+.footer
+    height: 95px
+    background: #F1F6FF31
+
+#calendar
+    width: $full_width $important
+    max-width: $full_width $important
+    min-width: $full_width $important
+    height: $full_width
+    padding: 10px
+
+.indicator_box
+    width: 20px
+    height: 20px
+    border-radius: 4px
+    margin: 0 10px
+
+.indecator_text
+    font-size: 14px
+    height: 20px
+
+.wellbeing_bg
+    background-color: #223771
+
+.wellbeing_ft
+    color: #223771
+
+.family_bg
+    background-color: #FC6273
+
+.family_ft
+    color: #FC6273
+
+.sports_bg
+    background-color: #FDCF3C
+
+.sports_ft
+    color: #FDCF3C
+
+.religious_bg
+    background-color: #299155
+
+.religious_ft
+    color: #299155
+
+.entertainment_bg
+    background-color: #6B3AD6
+
+.entertainment_ft
+    color: #6B3AD6
+
+.educational_bg
+    background-color: #7CD1D4
+
+.educational_ft
+    color: #7CD1D4
+
+.footer_row
+    height: 47.5px
+
+@media only screen and (max-width: $beakpoint_laptop_sm)
+    .calender_container
+        width: 910px
+
+@media only screen and (max-width: $beakpoint_tablet)
+    .calender_container
+        width: $full_width

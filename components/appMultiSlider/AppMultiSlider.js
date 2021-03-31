@@ -9,6 +9,7 @@ export default function AppMultiSlider({
   onSlideChanged,
   paddingLeft,
   paddingRight,
+  animationType
 }) {
   return (
     <AliceCarousel
@@ -20,7 +21,8 @@ export default function AppMultiSlider({
       autoPlayStrategy={"all"}
       disableDotsControls
       disableButtonsControls
-      // infinite
+      infinite={false}
+      animationType={animationType}
       paddingLeft={paddingLeft}
       paddingRight={paddingRight}
       autoWidth={true}
