@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "antd";
-// import { addClass } from "@syncfusion/ej2-base";
-import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+// import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 // component
+import AppCalendar from "./AppCalender";
 import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 //css
 import styles from "./calendar.module.sass";
 
-function onchange(args) {}
-
 export default function Calendar() {
   return (
     <div
-    className={`${styles.calender_bg}`}
+      className={`${styles.calender_bg}`}
       style={{
         backgroundImage: `url(/background/calender.svg)`,
       }}
@@ -25,12 +23,7 @@ export default function Calendar() {
               <Row>
                 <Col xs={0} sm={0} md={24} lg={24} xl={24}>
                   <div className={`${styles.main}`}>
-                    <CalendarComponent
-                      id={`${styles.calendar}`}
-                      // renderDayCell={this.customDates.bind(this)}
-                      change={onchange}
-                      className="e-customStyle"
-                    ></CalendarComponent>
+                    <AppCalendar />
                   </div>
                 </Col>
                 <Col xs={0} sm={0} md={24} lg={24} xl={24}>

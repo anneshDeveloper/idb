@@ -35,12 +35,11 @@ a {
   height: 600px;
   padding: 10px;
 } */
-.e-day{
+.e-day {
   font-size: 25px !important;
 }
 
 .e-calendar .e-content span.e-day {
-
   height: 61px !important;
   width: 61px !important;
   display: flex !important;
@@ -48,7 +47,9 @@ a {
   align-items: center !important;
 }
 
-.e-calendar .e-content.e-month td {
+.e-calendar .e-content.e-month td,
+.e-calendar .e-content.e-year td,
+.e-calendar .e-content.e-decade td {
   padding: 25px 20px !important;
 }
 
@@ -61,7 +62,7 @@ a {
   width: 61px !important;
 }
 
-.spec{
+.spec {
   border-radius: 50% !important;
   /* background-image: url("../public/Services\ &\ Activities\ lcons\ set1.svg") !important; */
 }
@@ -86,20 +87,31 @@ a {
 
 .e-calendar .e-header .e-date-icon-prev {
   transform: rotate(-90deg) !important;
-  color:#223771 !important
+  color: #223771 !important;
+  padding-top: 7px !important;
 }
 
 .e-calendar .e-header .e-date-icon-next {
   transform: rotate(-90deg) !important;
-  color:#223771 !important
+  color: #223771 !important;
 }
+
+.e-calendar .e-header .e-icon-container {
+  width: 180px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .e-calendar .e-header.e-month .e-title {
+  display: none;
+} */
 
 .e-calendar .e-header .e-icon-container .e-prev,
-.e-calendar .e-header .e-icon-container .e-next{
+.e-calendar .e-header .e-icon-container .e-next {
   border-radius: 50%;
-  border: 2px solid #223771
+  border: 2px solid #223771;
 }
 
-.e-footer-container{
+.e-footer-container {
   display: none !important;
 }
