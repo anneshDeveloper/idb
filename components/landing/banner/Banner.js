@@ -3,7 +3,7 @@ import moment from "moment";
 // import { Carousel } from "react-responsive-carousel";
 import { Button } from "antd";
 //component
-import AppSlider from "../../appSlider/AppSlider";
+import AppSlider from "../../../common_components/appSlider/AppSlider";
 //css
 import styles from "./banner.module.sass";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";

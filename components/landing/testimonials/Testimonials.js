@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 //component
 import ResponsiveView from "./ResponsiveView";
-import AppSlider from "../../appSlider/AppSlider";
+import AppSlider from "../../../common_components/appSlider/AppSlider";
 // css
 import styles from "./testimonials.module.sass";
 

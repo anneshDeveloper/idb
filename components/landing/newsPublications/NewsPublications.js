@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 // component
-import AppBtn from "../appBtn/AppBtn";
-import AppMultiSlider from "../../appMultiSlider/AppMultiSlider";
+import AppBtn from "../../../common_components/appBtn/AppBtn";
+import AppMultiSlider from "../../../common_components/appMultiSlider/AppMultiSlider";
 import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 //css
 import styles from "./news-publications.module.sass";

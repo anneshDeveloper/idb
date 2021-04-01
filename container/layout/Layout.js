@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Head from "../../components/head/Head";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import AppDrawer from "../../components/appDrawer/AppDrawer";
+import Head from "../../common_components/head/Head";
+import Header from "../../common_components/header/Header";
+import Footer from "../../common_components/footer/Footer";
+import AppDrawer from "../../common_components/appDrawer/AppDrawer";
 
 export default function Layout({ children, socialMediaIcon, contactUsData }) {
   const [visbility, setVisbility] = useState(false);

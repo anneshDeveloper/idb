@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Row, Col } from "antd";
 //component
-import AppBtn from "../appBtn/AppBtn";
+import AppBtn from "../../../common_components/appBtn/AppBtn";
 //service
 import {
   subscribeChangeHandler,

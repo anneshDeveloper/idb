@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Button } from "antd";
 // component
 import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
-import AppMultiSlider from "../../appMultiSlider/AppMultiSlider";
+import AppMultiSlider from "../../../common_components/appMultiSlider/AppMultiSlider";
 //css
 import styles from "./upcoming-events.module.sass";
 
