@@ -1,8 +1,5 @@
 import Image from "next/image";
 import { Row, Col } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
-//component
-import AppBtn from "../appBtn/AppBtn";
 // css
 import styles from "./testimonials.module.sass";
 
@@ -16,7 +13,7 @@ export default function ResponsiveView({ view }) {
       >
         <Row>
           <Col xs={17} sm={17} md={16} lg={17} xl={17}>
-            <div /* className={`${styles.testimonials_text}`} */>
+            <div>
               <h3 className={`${styles.testimonials_title}`}>Testimonials</h3>
               <Row>
                 <Col xs={3} sm={3} md={3} lg={3} xl={3}>

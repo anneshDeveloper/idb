@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Row, Col } from "antd";
-// import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
 // component
 import AppCalendar from "./AppCalender";
+import Indicators from "./Indicators";
 import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 //css
 import styles from "./calendar.module.sass";
@@ -27,114 +27,7 @@ export default function Calendar() {
                   </div>
                 </Col>
                 <Col xs={0} sm={0} md={24} lg={24} xl={24}>
-                  <div className={`${styles.footer}`}>
-                    <Row className={`${styles.footer_row}`}>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.wellbeing_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.wellbeing_ft}`}
-                        >
-                          Wellbeing Awareness
-                        </div>
-                      </Col>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.family_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.family_ft}`}
-                        >
-                          Family & Social
-                        </div>
-                      </Col>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.sports_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.sports_ft}`}
-                        >
-                          Virtual Sports & Recreational
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row className={`${styles.footer_row}`}>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.religious_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.religious_ft}`}
-                        >
-                          Religious Activities
-                        </div>
-                      </Col>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.entertainment_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.entertainment_ft}`}
-                        >
-                          Entertainment & Online Games
-                        </div>
-                      </Col>
-                      <Col
-                        xs={0}
-                        sm={0}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                        className={`d-flex align-items-center`}
-                      >
-                        <div
-                          className={`${styles.indicator_box} ${styles.educational_bg}`}
-                        ></div>
-                        <div
-                          className={`${styles.indecator_text} ${styles.educational_ft}`}
-                        >
-                          Educational Activities
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
+                  <Indicators />
                 </Col>
               </Row>
             </Col>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Row, Col, Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
@@ -6,31 +5,9 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import AppBtn from "../../../common_components/appBtn/AppBtn";
 import AppMultiSlider from "../../../common_components/appMultiSlider/AppMultiSlider";
 import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
+import NewsPublicationsCard from "../../../common_components/newsPublicationsCard/NewsPublicationsCard";
 //css
 import styles from "./news-publications.module.sass";
-
-function Card({ data }) {
-  const base_url = process.env.BASE_URL;
-  return (
-    <div className={`${styles.whats_new_card} p-4`}>
-      <div className={`${styles.whats_new_card_image} mb-3`}>
-        <Image
-          src={base_url + data.NewsImage[0].formats.thumbnail.url}
-          alt="card-img"
-          width="284"
-          height="202"
-        />
-      </div>
-      <div className={`${styles.whats_new_card_text}`}>
-        <h3>{data.NewsTitle}</h3>
-        <p>{data.NewsDescription}</p>
-      </div>
-      <Button className={`${styles.whats_new_card_btn}`}>
-        <h6 className={`m-0`}>READ MORE</h6>
-      </Button>
-    </div>
-  );
-}
 
 const responsive = {
   0: { items: 1 },
@@ -50,13 +27,13 @@ function setItem(data) {
         <div className={`${styles.news_container}`} data-value="1">
           <Row gutter={[16, 16]}>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index - 2]} />
+              <NewsPublicationsCard data={data[index - 2]} />
             </Col>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index - 1]} />
+              <NewsPublicationsCard data={data[index - 1]} />
             </Col>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index]} />
+              <NewsPublicationsCard data={data[index]} />
             </Col>
           </Row>
         </div>
@@ -65,13 +42,13 @@ function setItem(data) {
         <div className={`${styles.news_container}`} data-value="1">
           <Row gutter={[8, 8]}>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index - 2]} />
+              <NewsPublicationsCard data={data[index - 2]} />
             </Col>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index - 1]} />
+              <NewsPublicationsCard data={data[index - 1]} />
             </Col>
             <Col span={8} className={`d-flex justify-content-center my-4`}>
-              <Card data={data[index]} />
+              <NewsPublicationsCard data={data[index]} />
             </Col>
           </Row>
         </div>
