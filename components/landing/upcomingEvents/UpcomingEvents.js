@@ -17,51 +17,22 @@ const responsive = {
   1440: { items: 9 },
 };
 
-// function Card({ data, bg, bgImage }) {
-//   return (
-//     <div
-//       className={`${styles.event_card} p-4`}
-//       style={{ backgroundImage: `url(${bgImage})`, backgroundColor: bg }}
-//     >
-//       <div
-//         className={`${styles.event_card_date} mb-5 py-1`}
-//         style={{ color: bg }}
-//       >
-//         <p className={`${styles.date} mt-2 mb-0`}>
-//           {data.EventCreatedDate.split(",")[0].split(" ")[1]}
-//         </p>
-//         <p className={`${styles.month} m-0`}>
-//           {data.EventCreatedDate.split(",")[0].split(" ")[0]}
-//         </p>
-//       </div>
-//       <h3 className={`${styles.event_title} pr-4 mb-4`}>{data.EventTitle}</h3>
-//       <p className={`${styles.event_time}`}>3:30 PM - 5:30 PM</p>
-//       <div className={`d-flex justify-content-center`}>
-//         <Button
-//           type="text"
-//           size={`large`}
-//           className={`${styles.event_button}`}
-//           shape="round"
-//           onClick={() => (location.href = `${data.RegistrationLink}`)}
-//         >
-//           Register Now
-//         </Button>
-//       </div>
-//     </div>
-//   );
-// }
-
 const items = [];
 
 function setItem(data) {
   data.forEach((item, i) => {
-    let [bg, bgImage] = setBackground(item);
+    let [bg, bgImage, boxShadow] = setBackground(item);
     items.push(
       <div
-        className={`item ${styles.event_card_container}`}
+        className={`item my-4 ${styles.event_card_container}`}
         data-value={i.toString}
       >
-        <UpcomingEventsCard data={item} bg={bg} bgImage={bgImage} />
+        <UpcomingEventsCard
+          data={item}
+          bg={bg}
+          bgImage={bgImage}
+          boxShadow={boxShadow}
+        />
       </div>
     );
   });
