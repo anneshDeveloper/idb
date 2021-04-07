@@ -5,7 +5,7 @@ import CommonSectionHeader from "../commonSectionHeader/CommonSectionHeader";
 import AppMultiSlider from "../../../common_components/appMultiSlider/AppMultiSlider";
 import UpcomingEventsCard from "../../../common_components/upcomingEventsCard/UpcomingEventsCard";
 //service
-import { setBackground } from "./localService";
+import { setBackground } from "../../../services/eventService";
 //css
 import styles from "./upcoming-events.module.sass";
 
@@ -95,6 +95,7 @@ export default function UpcomingEvents({ eventsData }) {
         paddingLeft={100}
         paddingRight={50}
         animationType={"slide"}
+        disableDotsControls={true}
       />
     </Row>
   );

@@ -102,6 +102,7 @@ export default function NewsPublications({ newsData }) {
             paddingLeft={0}
             paddingRight={0}
             animationType={"fadeout"}
+            disableDotsControls={true}
           />
         </Col>
         <Col xs={0} sm={0} md={24} lg={0} xl={0}>
@@ -112,6 +113,8 @@ export default function NewsPublications({ newsData }) {
             onSlideChanged={onSlideChanged}
             paddingLeft={0}
             paddingRight={0}
+            animationType={"slide"}
+            disableDotsControls={true}
           />
         </Col>
         <div className={`d-flex w-100 justify-content-end`}>

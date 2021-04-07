@@ -1,4 +1,6 @@
-import { Row, Col, Button } from "antd";
+import { Row, Col } from "antd";
+//component
+import AppBtnPair from "../../../common_components/appBtnPair/AppBtnPair";
 // css
 import styles from "./common-section-header.module.sass";
 
@@ -24,46 +26,13 @@ export default function CommonSectionHeader({
         className={`d-flex justify-content-end`}
       >
         {sliderSection ? (
-          <>
-            <Button
-              type="text"
-              className={`${
-                prevBtn === "disable"
-                  ? styles.slider_btn_disable
-                  : styles.slider_btn
-              } mx-2`}
-              icon={
-                <i
-                  className={`fa fa-chevron-left ${
-                    prevBtn === "disable"
-                      ? styles.slider_btn_icon_disable
-                      : styles.slider_btn_icon
-                  }`}
-                  aria-hidden="true"
-                ></i>
-              }
-              onClick={onClickPrev}
-            />
-            <Button
-              type="text"
-              className={`${
-                nextBtn === "disable"
-                  ? styles.slider_btn_disable
-                  : styles.slider_btn
-              } mx-2`}
-              icon={
-                <i
-                  className={`fa fa-chevron-right ${
-                    nextBtn === "disable"
-                      ? styles.slider_btn_icon_disable
-                      : styles.slider_btn_icon
-                  }`}
-                  aria-hidden="true"
-                ></i>
-              }
-              onClick={onClickNext}
-            />
-          </>
+          <AppBtnPair
+            prevBtn={prevBtn}
+            nextBtn={nextBtn}
+            onClickPrev={onClickPrev}
+            onClickNext={onClickNext}
+            page={"landing"}
+          />
         ) : (
           ""
         )}

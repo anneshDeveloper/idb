@@ -9,7 +9,7 @@ import UpcomingEvents from "../../components/landing/upcomingEvents/UpcomingEven
 import Testimonials from "../../components/landing/testimonials/Testimonials";
 import ContactUsSection from "../../components/landing/contactUsSection/ContactUsSection";
 import Gallery from "../../components/landing/gallery/Gallery";
-import VideoSection from "../../components/landing/videoSection/VideoSection";
+import VideoSection from "../../common_components/videoSection/VideoSection";
 import Calendar from "../../components/landing/calendar/Calendar";
 
 export default function Landing({

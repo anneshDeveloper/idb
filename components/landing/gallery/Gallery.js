@@ -253,6 +253,7 @@ export default function Gallery() {
           paddingLeft={100}
           paddingRight={50}
           animationType={"slide"}
+          disableDotsControls={true}
         />
       </Row>
     </div>
